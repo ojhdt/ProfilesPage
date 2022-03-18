@@ -1,3 +1,12 @@
+const imgList = ["source/1.jpg","source/2.jpg"]
+
+window.onload = function(){
+  let id = setInterval(()=>{
+    switchImg()
+  },20000)
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Get all "navbar-burger" elements
@@ -32,3 +41,13 @@ body.addEventListener('mousemove', (e) => {
   body.style.setProperty('--percentHeight', percentHeight)
   // console.log(percentWidth, percentHeight)
 })
+
+const img = document.getElementById("backgroundImg")
+var switchImg = function(){
+  var index = Math.floor((Math.random()*imgList.length));
+  img.style.opacity = 0
+  setTimeout(()=>{
+    img.src = imgList[index]
+    img.style.opacity = 100
+  }, 500)
+}

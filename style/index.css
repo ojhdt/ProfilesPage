@@ -23,6 +23,7 @@ body {
     width: 120%;
     object-fit: cover;
     max-width: 120%;
+    transition: opacity .5s ease-in-out;
 }
 
 #content{
