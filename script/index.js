@@ -10,6 +10,7 @@ window.onload = function () {
   }, 15000)
   ap = new APlayer({
     container: document.getElementById('aplayer'),
+    order: 'random',
     lrcType: 3,
     audio: [{
         name: '8 Bit Adventure',
@@ -45,6 +46,13 @@ window.onload = function () {
     })
     // togglePauseBtns.forEach(element => element.style.display = '')
     // togglePlayBtns.forEach(element => element.style.display = 'show')
+  })
+  ap.on('playing', ()=>{
+    let index = ap.list.index
+    let name = ap.options.audio[index].name
+    let artist = ap.options.audio[index].artist
+    let cover = ap.options.audio[index].cover
+    console.log(ap.options.audio[index])
   })
 }
 
