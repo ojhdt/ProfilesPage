@@ -119,3 +119,11 @@ function navigateTo(e) {
 function toggleMusic() {
   ap.toggle()
 }
+
+function backMusic(){
+  ap.skipBack()
+}
+
+function forwardMusic(){
+  ap.skipForward()
+}
