@@ -45,6 +45,19 @@ body {
     padding-bottom: 30px!important;
 }
 
+.toggle-container{
+    position: relative;
+}
+
+.toggle-play{
+    position: absolute;
+}
+
+.toggle-pause{
+    position: absolute;
+    visibility: hidden;
+}
+
 .has-blur {
     -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);

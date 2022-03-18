@@ -7,6 +7,7 @@
     <title>Ojhdtの音乐盒</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/APlayer.min.css">
     <link rel="shortcut icon" href="source/favicon.ico">
     <script src="https://kit.fontawesome.com/eb50795f51.js" crossorigin="anonymous"></script>
 </head>
@@ -121,9 +122,10 @@
                                     <i class="fa-solid fa-backward-step"></i>
                                 </span>
                             </a>
-                            <a class="navbar-item">
-                                <span class="icon">
-                                    <i class="fa-solid fa-play"></i>
+                            <a class="navbar-item" onclick="toggleMusic()">
+                                <span class="icon toggle-container">
+                                    <i class="fa-solid fa-play toggle-play"></i>
+                                    <i class="fa-solid fa-pause toggle-pause"></i>
                                 </span>
                             </a>
                             <a class="navbar-item">
@@ -139,9 +141,10 @@
                                         <i class="fa-solid fa-backward-step"></i>
                                     </span>
                                 </button>
-                                <button class="button">
-                                    <span class="icon">
-                                        <i class="fa-solid fa-play"></i>
+                                <button class="button" onclick="toggleMusic()">
+                                    <span class="icon toggle-container">
+                                        <i class="fa-solid fa-play toggle-play"></i>
+                                        <i class="fa-solid fa-pause toggle-pause"></i>
                                     </span>
                                 </button>
                                 <button class="button">
@@ -197,7 +200,10 @@
             </footer>
         </div>
     </section>
+    <div id="aplayer" style="display: none;"></div>
     <script src="script/index.js"></script>
+    <script src="script/hls.min.js"></script>
+    <script src="script/APlayer.min.js"></script>
 </body>
 
 </html>
