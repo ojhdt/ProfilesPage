@@ -30,5 +30,5 @@ body.addEventListener('mousemove', (e) => {
   let percentHeight = e.clientY / window.outerHeight - 0.5
   body.style.setProperty('--percentWidth', percentWidth)
   body.style.setProperty('--percentHeight', percentHeight)
-  console.log(percentWidth, percentHeight)
+  // console.log(percentWidth, percentHeight)
 })

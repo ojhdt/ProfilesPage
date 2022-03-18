@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translate(calc(var(--percentWidth) * 20px), calc(var(--percentHeight) * 20px));
+    transform: translate(calc(var(--percentWidth) * 40px), calc(var(--percentHeight) * 40px));
 }
 
 #background img{
@@ -25,8 +25,20 @@ body {
     max-width: 120%;
 }
 
+#content{
+    transform: translate(calc(var(--percentWidth) * 20px), calc(var(--percentHeight) * 20px));
+}
+
+.navbar{
+    
+}
+
+.footer{
+
+}
+
 .has-blur {
-    /* background-color: rgba(255, 255, 255, .8);  */
-    -webkit-backdrop-filter: blur(45px);
-    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, .4)!important; 
 }
