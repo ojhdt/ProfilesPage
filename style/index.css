@@ -61,7 +61,7 @@ body {
 .song-info{
     position: absolute;
     bottom: 0;
-    right: 0%;
+    right: -100%;
     transition: right .5s ease-in-out;
 }
 

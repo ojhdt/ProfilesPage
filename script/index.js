@@ -66,23 +66,6 @@ window.onload = function () {
   })
 }
 
-// {
-//   name: 'Flower Dance',
-//   artist: 'DJ OKAWARI',
-//   url: 'source/music/DJ OKAWARI - Flower Dance.mp3',
-//   cover: 'source/music/DJ OKAWARI - Flower Dance.png',
-//   lrc: 'source/music/DJ OKAWARI - Flower Dance.lrc',
-//   type: 'hls'
-// },
-// {
-//   name: 'Luv Letter',
-//   artist: 'DJ OKAWARI',
-//   url: 'source/music/DJ OKAWARI - Luv Letter.mp3',
-//   cover: 'source/music/DJ OKAWARI - Luv Letter.png',
-//   lrc: '',
-//   type: 'hls'
-// },
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -165,4 +148,14 @@ async function popCard(message) {
       isPopping = false
     }, 500)
   }, 5000)
+}
+
+function closeCard(){
+  if(isPopping){
+    clearTimeout(timeoutID)
+    songInfo.style.right = '-100%'
+    setTimeout(()=>{
+      isPopping = false
+    },500)
+  }
 }
