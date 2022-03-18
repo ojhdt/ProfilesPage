@@ -58,6 +58,13 @@ body {
     visibility: hidden;
 }
 
+.song-info{
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    transition: right .5s ease-in-out;
+}
+
 .has-blur {
     -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);

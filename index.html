@@ -200,6 +200,28 @@
             </footer>
         </div>
     </section>
+    <div class="message song-info" id="song-info">
+        <div class="message-header">
+            <p>Now Playing</p>
+            <button class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+            <div class="media">
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        <img id="song-info-album" src="https://bulma.io/images/placeholders/128x128.png">
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="content" style="max-width: 180px;">
+                        <strong id="song-info-name">John Smith</strong>
+                        <br>
+                        <p id="song-info-artist">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="aplayer" style="display: none;"></div>
     <script src="script/index.js"></script>
     <script src="script/hls.min.js"></script>

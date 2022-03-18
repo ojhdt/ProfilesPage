@@ -2,7 +2,13 @@ const imgList = ["source/1.jpg", "source/2.jpg"]
 const body = document.querySelector('body')
 const togglePlayBtns = document.getElementsByClassName('toggle-play')
 const togglePauseBtns = document.getElementsByClassName('toggle-pause')
+const songInfo = document.getElementById('song-info')
+const songInfoAlbum = document.getElementById('song-info-album')
+const songInfoName = document.getElementById('song-info-name')
+const songInfoArtist = document.getElementById('song-info-artist')
 let ap
+let isPopping = false
+let timeoutID
 
 window.onload = function () {
   let id = setInterval(() => {
@@ -47,12 +53,16 @@ window.onload = function () {
     // togglePauseBtns.forEach(element => element.style.display = '')
     // togglePlayBtns.forEach(element => element.style.display = 'show')
   })
-  ap.on('playing', ()=>{
+  ap.on('playing', () => {
     let index = ap.list.index
     let name = ap.options.audio[index].name
     let artist = ap.options.audio[index].artist
     let cover = ap.options.audio[index].cover
-    console.log(ap.options.audio[index])
+    popCard({
+      name,
+      artist,
+      cover
+    })
   })
 }
 
@@ -128,10 +138,31 @@ function toggleMusic() {
   ap.toggle()
 }
 
-function backMusic(){
+function backMusic() {
   ap.skipBack()
 }
 
-function forwardMusic(){
+function forwardMusic() {
   ap.skipForward()
+}
+
+async function popCard(message) {
+  if (isPopping) {
+    clearTimeout(timeoutID)
+    songInfo.style.right = '-100%'
+    await new Promise((resolve, reject) => {
+      setTimeout(resolve, 500)
+    })
+  }
+  isPopping = true
+  songInfo.style.right = '20px'
+  songInfoAlbum.src = message.cover
+  songInfoName.innerHTML = message.name
+  songInfoArtist.innerHTML = message.artist
+  timeoutID = setTimeout(() => {
+    songInfo.style.right = '-100%'
+    setTimeout(() => {
+      isPopping = false
+    }, 500)
+  }, 5000)
 }
