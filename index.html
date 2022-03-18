@@ -41,22 +41,22 @@
                             <span aria-hidden="true"></span>
                         </a>
                     </div>
-    
+
                     <div id="navMenu" class="navbar-menu">
                         <div class="navbar-start">
                             <a class="navbar-item">
                                 Blog
                             </a>
-    
+
                             <a class="navbar-item">
                                 GitHub
                             </a>
-    
+
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link is-arrowless">
                                     Tools
                                 </a>
-    
+
                                 <div class="navbar-dropdown">
                                     <a class="navbar-item" href="https://aria2.ojhdt.com/" target="_blank">
                                         <span class="icon-text">
@@ -72,12 +72,12 @@
                                     </a>
                                 </div>
                             </div>
-    
+
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link is-arrowless">
                                     Social
                                 </a>
-    
+
                                 <div class="navbar-dropdown">
                                     <a class="navbar-item" href="https://twitter.com/ojhdt" target="_blank">
                                         <span class="icon-text">
@@ -100,12 +100,12 @@
                                     </a>
                                 </div>
                             </div>
-    
+
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link is-arrowless">
                                     English
                                 </a>
-    
+
                                 <div class="navbar-dropdown">
                                     <a class="navbar-item" href="" target="_blank">
                                         简体中文
@@ -141,23 +141,45 @@
             </nav>
         </div>
         <div class="hero-body">
-            <div class="container has-text-centered" id="content">
-                <p class="has-text-light is-size-3">
-                    Ojhdtの音乐盒
-                </p>
-                <p class="has-text-light is-size-6"></p>
+            <div class="container" id="content">
+                <div class="content has-text-centered has-text-light">
+                    <p class="is-size-3">
+                        Ojhdtの音乐盒
+                    </p>
+                    <p class="is-size-6">
+                        隐约雷鸣 阴霾天空
+                    </p>
+                </div>
+                <div class="btn-container">
+                    <button class="button is-rounded has-blur mr-5" onclick="navigateTo(this)"
+                        data-target="https://blog.ojhdt.com/">
+                        <span class="icon">
+                            <i class="fa-solid fa-blog"></i>
+                        </span>
+                        <span>Blog</span>
+                    </button>
+
+                    <button class="button is-rounded has-blur ml-5" onclick="navigateTo(this)"
+                        data-target="https://github.com/ojhdt/">
+                        <span class="icon">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+                        <span>GitHub</span>
+                    </button>
+                </div>
             </div>
         </div>
         <div class="hero-foot">
             <footer class="footer has-blur">
                 <div class="container">
                     <div class="content has-text-centered has-text-left-desktop">
-                      <p>
-                        © 2018-2022 Ojhdtの音乐盒 Powered by <a href="https://bulma.io/"><strong>Bulma</strong></a>. 粤ICP备19036271号-1
-                      </p>
+                        <p>
+                            © 2018-2022 Ojhdtの音乐盒 Powered by <a href="https://bulma.io/"><strong>Bulma</strong></a>.
+                            粤ICP备19036271号-1
+                        </p>
                     </div>
                 </div>
-              </footer>
+            </footer>
         </div>
     </section>
     <script src="script/index.js"></script>

@@ -3,7 +3,7 @@ const imgList = ["source/1.jpg","source/2.jpg"]
 window.onload = function(){
   let id = setInterval(()=>{
     switchImg()
-  },20000)
+  },15000)
 }
 
 
@@ -50,4 +50,9 @@ var switchImg = function(){
     img.src = imgList[index]
     img.style.opacity = 100
   }, 500)
+}
+
+function navigateTo(e) {
+  // console.log(e.getAttribute("data-target"))
+  window.open(e.getAttribute("data-target"), "_blank")
 }
