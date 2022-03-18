@@ -1,0 +1,32 @@
+body {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#background{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(calc(var(--percentWidth) * 20px), calc(var(--percentHeight) * 20px));
+}
+
+#background img{
+    position: absolute;
+    display: block;
+    height: 120%;
+    width: 120%;
+    object-fit: cover;
+    max-width: 120%;
+}
+
+.has-blur {
+    /* background-color: rgba(255, 255, 255, .8);  */
+    -webkit-backdrop-filter: blur(45px);
+    backdrop-filter: blur(45px);
+}
