@@ -40,7 +40,6 @@ window.onload = function () {
   ap = new APlayer({
     container: document.getElementById('aplayer'),
     order: 'random',
-    lrcType: 3,
     audio: [{
         name: '8 Bit Adventure',
         artist: 'Adhesive Wombat',
