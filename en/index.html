@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ojhdtの音乐盒</title>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
-    <link rel="stylesheet" href="style/bulma.min.css">
-    <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="style/APlayer.min.css">
-    <link rel="shortcut icon" href="source/favicon.ico">
-    <link rel="stylesheet" href="style/fontawesome/fontawesome.min.css">
-    <link rel="stylesheet" href="style/fontawesome/solid.min.css">
-    <link rel="stylesheet" href="style/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="../style/bulma.min.css">
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/APlayer.min.css">
+    <link rel="shortcut icon" href="../source/favicon.ico">
+    <link rel="stylesheet" href="../style/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="../style/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="../style/fontawesome/brands.min.css">
     <!-- <script src="https://kit.fontawesome.com/eb50795f51.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body id="body">
     <div id="background">
-        <img id="backgroundImg" src="source/default.png">
+        <img id="backgroundImg" src="../source/default.png">
     </div>
     <section class="hero is-fullheight">
         <div class="hero-head">
@@ -36,7 +36,7 @@
                             </a> -->
                         <div class="navbar-item">
                             <figure class="image is-1by1" style="width: 24px;">
-                                <img class="is-rounded" src="source/avatar.png">
+                                <img class="is-rounded" src="../source/avatar.png">
                             </figure>
                         </div>
                         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
@@ -50,12 +50,12 @@
                     <div id="navMenu" class="navbar-menu">
                         <div class="navbar-start">
                             <a class="navbar-item" href="#">
-                                主页
+                                Home
                             </a>
 
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link is-arrowless">
-                                    百宝箱
+                                    Tools
                                 </a>
 
                                 <div class="navbar-dropdown">
@@ -69,14 +69,14 @@
                                         <span class="icon-text">
                                             <i class="fa-solid fa-cloud"></i>
                                         </span>
-                                        <span class="ml-2">云盘</span>
+                                        <span class="ml-2">Netdisk</span>
                                     </a>
                                 </div>
                             </div>
 
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link is-arrowless">
-                                    社交
+                                    Social
                                 </a>
 
                                 <div class="navbar-dropdown">
@@ -84,32 +84,32 @@
                                         <span class="icon-text">
                                             <i class="fa-brands fa-twitter"></i>
                                         </span>
-                                        <span class="ml-2">推特</span>
+                                        <span class="ml-2">Twitter</span>
                                     </a>
                                     <a class="navbar-item" href="https://t.me/ojhdt" target="_blank">
                                         <span class="icon-text">
                                             <i class="fa-brands fa-telegram"></i>
                                         </span>
-                                        <span class="ml-2">电报</span>
+                                        <span class="ml-2">Telegram</span>
                                     </a>
                                     <hr class="navbar-divider">
                                     <a class="navbar-item" href="mailto:ojhdtmail@gmail.com" target="_blank">
                                         <span class="icon-text">
                                             <i class="fa-solid fa-envelope"></i>
                                         </span>
-                                        <span class="ml-2">邮件</span>
+                                        <span class="ml-2">Email</span>
                                     </a>
                                 </div>
                             </div>
 
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link is-arrowless">
-                                    简体中文
+                                    English
                                 </a>
 
                                 <div class="navbar-dropdown">
-                                    <a class="navbar-item" href="https://ojhdt.com/en" target="_blank">
-                                        English
+                                    <a class="navbar-item" href="https://ojhdt.com/" target="_blank">
+                                        简体中文
                                     </a>
                                     <a class="navbar-item" href="https://ojhdt.com/zh-tw" target="_blank">
                                         正體中文
@@ -178,7 +178,7 @@
                         <span class="icon">
                             <i class="fa-solid fa-blog"></i>
                         </span>
-                        <span>博客</span>
+                        <span>Blog</span>
                     </button>
 
                     <button class="button is-rounded has-blur ml-5" onclick="navigateTo(this)"
@@ -206,7 +206,7 @@
     </section>
     <div class="message song-info" id="song-info">
         <div class="message-header">
-            <p>正在播放</p>
+            <p>Now Playing</p>
             <button class="delete" aria-label="delete" onclick="closeCard()"></button>
         </div>
         <div class="message-body">
@@ -227,9 +227,9 @@
         </div>
     </div>
     <div id="aplayer" style="display: none;"></div>
-    <script src="script/index.js"></script>
-    <script src="script/hls.min.js"></script>
-    <script src="script/APlayer.min.js"></script>
+    <script src="../script/index.js"></script>
+    <script src="../script/hls.min.js"></script>
+    <script src="../script/APlayer.min.js"></script>
 </body>
 
 </html>
