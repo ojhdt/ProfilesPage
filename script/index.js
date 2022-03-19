@@ -1111,6 +1111,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+window.addEventListener('keydown', (e) => {
+  if (e.key == 'ArrowLeft') {
+    backMusic()
+  }
+  if (e.key == 'ArrowRight') {
+    forwardMusic()
+  }
+  if (e.key == ' ') {
+    toggleMusic()
+  }
+})
 
 body.addEventListener('mousemove', (e) => {
   let percentWidth = e.clientX / window.outerWidth - 0.5
