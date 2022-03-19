@@ -16,7 +16,6 @@ const imgList = [
   "https://ojhdt-1257115336.cos.ap-guangzhou.myqcloud.com/random/21.png",
   "https://ojhdt-1257115336.cos.ap-guangzhou.myqcloud.com/random/22.png",
   "https://ojhdt-1257115336.cos.ap-guangzhou.myqcloud.com/random/23.png",
-  "https://ojhdt-1257115336.cos.ap-guangzhou.myqcloud.com/random/24.png",
   "https://ojhdt-1257115336.cos.ap-guangzhou.myqcloud.com/random/26.png",
   "https://ojhdt-1257115336.cos.ap-guangzhou.myqcloud.com/random/28.png",
   "https://ojhdt-1257115336.cos.ap-guangzhou.myqcloud.com/random/29.png",
