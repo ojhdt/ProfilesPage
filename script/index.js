@@ -157,11 +157,12 @@ async function switchImg() {
   var src = imageList[index]
   // Get a reference to the image in whatever way suits.
   const img = document.getElementById("backgroundImg")
-  img.style.opacity = 0
-  img.onload = function(){
-    img.style.opacity = 100
-  }
-  img.src = src
+  // img.style.opacity = 0
+  // img.onload = function(){
+  //   img.style.opacity = 100
+  // }
+  // img.src = src
+
   // var tempImg = new Image()
   // tempImg.onload = function () {
   //   img.style.opacity = 0
@@ -171,6 +172,11 @@ async function switchImg() {
   //   }, 500)
   // }
   // tempImg.src = src
+
+  img.style.opacity = 0
+  img.src = src
+  await new Promise((resolve) => { img.onload = resolve; });
+  img.style.opacity = 100
 }
 
 function navigateTo(e) {
