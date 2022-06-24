@@ -1123,13 +1123,62 @@ window.addEventListener('keydown', (e) => {
   }
 })
 
-body.addEventListener('mousemove', (e) => {
-  let percentWidth = e.clientX / window.outerWidth - 0.5
-  let percentHeight = e.clientY / window.outerHeight - 0.5
+// 检查手机是否支持
+if (window.DeviceOrientationEvent) {
+  window.addEventListener('deviceorientation', (event) => {
+
+    if (event.alpha == null) {    // PC端提示
+      setMouseListener()
+      return;
+    }
+
+    /* 根据beta和gamma值的变化更新偏移值 */
+    calcOffset(event.beta, event.gamma);
+
+    /* 显示当下的值 */
+    // document.getElementById('alpha').innerHTML = 'x = ' + (event.alpha).toFixed(2); // 东南西北朝向，正北为360/0
+    // document.getElementById('beta').innerHTML = 'y = ' + event.beta.toFixed(2); // 手机竖向立倒
+    // document.getElementById('gamma').innerHTML = 'z = ' + (event.gamma).toFixed(2); // 手机横向立倒    
+    // document.getElementById('deg').innerHTML = 'deg = ' + -( deg + 45 ).toFixed(2); // 相对x轴夹角
+    // 显示当前的各项数据
+    // spans = document.getElementsByTagName('span');
+    // for (item of spans)
+    //   item.setAttribute('class', 'show');
+
+    // 更新屏幕显示内容
+    // refreshScreen();
+  }, false);
+} else {
+  setMouseListener()
+}
+
+function setMouseListener(){
+  body.addEventListener('mousemove', (e) => {
+    let percentWidth = e.clientX / window.outerWidth - 0.5
+    let percentHeight = e.clientY / window.outerHeight - 0.5
+    body.style.setProperty('--percentWidth', percentWidth)
+    body.style.setProperty('--percentHeight', percentHeight)
+    // console.log(percentWidth, percentHeight)
+  })
+}
+
+function calcOffset(beta, gamma) {
+  let offsetX = Math.sin((Math.abs(beta) < 90 ? gamma : -gamma) * Math.PI / 180);  // - 90 < beta < 90 时，手机朝上
+  let offsetY = Math.sin(beta * Math.PI / 180);
+
+  // 这里需要用到你小学二年级学过的直角坐标转极坐标的方法
+  // 最后的-45是为了让箭头初始指向x轴正方向
+  // css的rotate()函数旋转的方向和极坐标系是相反的
+  // 同样，text-shadow阴影的offsetY也与y轴是相反的
+  // let deg = -Math.atan( -offsetY / offsetX ) * 180 / Math.PI + ( offsetX < 0 ? -180 : 0 ) - 45;
+  // console.log(`${offsetX}.${offsetY},${deg}`)
+  let percentWidth = offsetX
+  let percentHeight = offsetY
   body.style.setProperty('--percentWidth', percentWidth)
   body.style.setProperty('--percentHeight', percentHeight)
-  // console.log(percentWidth, percentHeight)
-})
+}
+
+
 
 const img = document.getElementById("backgroundImg")
 var switchImg = function () {
