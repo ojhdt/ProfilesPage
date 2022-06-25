@@ -15,6 +15,12 @@ window.onload = async function () {
   const json = await response.json()
   imageList = json.imageList
   musicList = json.musicList
+
+  BackgroundCheck.init({
+    targets: '.mainText',
+    images: '#backgroundImg'
+  });
+
   let id = setInterval(() => {
     switchImg()
   }, 12000)
@@ -157,6 +163,7 @@ async function switchImg() {
   var src = imageList[index]
   // Get a reference to the image in whatever way suits.
   const img = document.getElementById("backgroundImg")
+  img.crossOrigin = "Anonymous";
   // img.style.opacity = 0
   // img.onload = function(){
   //   img.style.opacity = 100
@@ -177,6 +184,7 @@ async function switchImg() {
   img.src = src
   await new Promise((resolve) => { img.onload = resolve; });
   img.style.opacity = 100
+  BackgroundCheck.refresh()
 }
 
 function navigateTo(e) {

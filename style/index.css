@@ -70,3 +70,16 @@ body {
     backdrop-filter: blur(30px);
     background-color: rgba(255, 255, 255, .4)!important; 
 }
+
+.mainText{
+    transition: color .5s ease-in-out;
+    color: hsl(0, 0%, 96%);
+}
+
+.mainText.background--light{
+    color: hsl(0, 0%, 21%);
+}
+
+.mainText.background--dark{
+    color: hsl(0, 0%, 96%);
+}
