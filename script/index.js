@@ -8,7 +8,7 @@ const songInfo = document.getElementById('song-info')
 const songInfoAlbum = document.getElementById('song-info-album')
 const songInfoName = document.getElementById('song-info-name')
 const songInfoArtist = document.getElementById('song-info-artist')
-let ap, timeoutID, imageList, musicList, isPopping = false
+let ap, timeoutID, imageList, musicList, isPopping = false, lastIndex = 0
 
 window.onload = async function () {
   const response = await fetch("../source/data.json")
@@ -159,7 +159,13 @@ function calcOffset(beta, gamma) {
 
 
 async function switchImg() {
-  var index = Math.floor((Math.random() * imageList.length));
+  if (imageList.length < 2) return;
+  let index
+  do {
+    index = Math.floor((Math.random() * imageList.length));
+    console.log(`Next random index is ${index}`)
+  } while (index == lastIndex)
+  lastIndex = index
   var src = imageList[index]
   // Get a reference to the image in whatever way suits.
   const img = document.getElementById("backgroundImg")
