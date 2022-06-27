@@ -11,10 +11,10 @@
  ## Screenshots
 
  Desktop
- 
+
  ![D-1](screenshots/D-1.png)
 
- ![D-2](screenshots/D-1.png)
+ ![D-2](screenshots/D-2.png)
 
  Mobile Device
 
