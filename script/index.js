@@ -27,10 +27,12 @@ window.onload = async function () {
   ap = new APlayer({
     container: document.getElementById('aplayer'),
     order: 'random',
+    loop: 'none',
     audio: musicList
   });
 
   ap.on('play', () => {
+    console.log('player played');
     Array.prototype.forEach.call(togglePauseBtns, (element) => {
       element.style.visibility = "visible"
     })
@@ -41,6 +43,7 @@ window.onload = async function () {
     // togglePlayBtns.forEach(element => element.style.display = '')
   })
   ap.on('pause', () => {
+    console.log('player paused');
     Array.prototype.forEach.call(togglePauseBtns, (element) => {
       element.style.visibility = "hidden"
     })
@@ -51,6 +54,7 @@ window.onload = async function () {
     // togglePlayBtns.forEach(element => element.style.display = 'show')
   })
   ap.on('playing', () => {
+    console.log('player playing');
     let index = ap.list.index
     let name = ap.options.audio[index].name
     let artist = ap.options.audio[index].artist
@@ -61,6 +65,10 @@ window.onload = async function () {
       cover
     })
   })
+  ap.on('ended', () => {
+    console.log('player ended');
+    forwardMusic()
+});
 }
 
 
@@ -187,6 +195,9 @@ async function switchImg() {
   // tempImg.src = src
 
   img.style.opacity = 0
+  await new Promise((resolve) => {setTimeout(() => {
+    resolve()
+  }, 500);})
   img.src = src
   await new Promise((resolve) => { img.onload = resolve; });
   img.style.opacity = 100
